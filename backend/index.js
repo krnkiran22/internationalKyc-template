@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
+
 
 // Initialize express
 const app = express();
@@ -10,8 +12,7 @@ app.use(express.json()); // To parse JSON bodies
 app.use(cors()); // Enable Cross-Origin Request Sharing
 
 // MongoDB connection URL
-const mongoURI = 'mongodb+srv://kirandev2210:kyc123@amlkyc.r0zb7.mongodb.net/?retryWrites=true&w=majority&appName=amlkyc';
-
+const mongoURI = process.env.MONGO_URI;
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
