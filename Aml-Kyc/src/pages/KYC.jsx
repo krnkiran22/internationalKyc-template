@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { FileCheck, ChevronRight } from 'lucide-react';
 
 const KYC = () => {
-  
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -23,7 +22,7 @@ const KYC = () => {
     const { image, ...dataToSubmit } = formData;
   
     try {
-      const response = await fetch(`https://international-kyc-template.vercel.app/submit-kyc`, {
+      const response = await fetch('http://localhost:5000/submit-kyc', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dataToSubmit),
