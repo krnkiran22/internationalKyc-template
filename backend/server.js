@@ -31,7 +31,10 @@ const userSchema = new mongoose.Schema({
 
 // Create a model for the user
 const User = mongoose.model('User', userSchema);
-
+app.get('/', (req, res) => {
+    res.send('Backend is running!');
+  });
+  
 // Route to handle KYC form submission
 app.post('/submit-kyc', async (req, res) => {
   const { first_name, last_name, dob, email, nationality, occupation, annual_income } = req.body;
