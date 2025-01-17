@@ -3,11 +3,11 @@ import { CheckCircle } from 'lucide-react';
 
 export default function Profile() {
   const [userData, setUserData] = useState(null);
-
+ 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/user-profile');
+        const response = await fetch(`https://international-kyc-template.vercel.app/user-profile`);
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
