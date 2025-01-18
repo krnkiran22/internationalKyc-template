@@ -22,7 +22,7 @@ const KYC = () => {
     const { image, ...dataToSubmit } = formData;
   
     try {
-      const response = await fetch('http://localhost:5000/submit-kyc', {
+      const response = await fetch('https://international-kyc-template-7usb-l2tw9oxzb-krnkiran22s-projects.vercel.app/api/users/submit-kyc', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dataToSubmit),

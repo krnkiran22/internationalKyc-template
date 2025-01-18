@@ -7,7 +7,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/user-profile`);
+        const response = await fetch(`https://international-kyc-template-dvk7.vercel.app/user-profile`);
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
